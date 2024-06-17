@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Joshi - Learning Journey</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            margin: 0; /* Remove default body margin */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1e1e1e; /* Darker header */
+            color: #e0e0e0;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        header h1 {
+            float: left;
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        header nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        header nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 10px;
+        }
+
+        header nav ul li a:hover {
+            color: #57a0d3;
+        }
+
+        .learning-journey {
+            position: relative;
+            padding: 40px 0;
+            flex: 1;
+        }
+
+        .learning-journey h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .path {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            width: 90%;
+            max-width: 800px;
+            border-left: 4px solid #57a0d3;
+        }
+
+        .milestone {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .milestone::before {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #57a0d3;
+            border-radius: 50%;
+            border: 4px solid #121212;
+        }
+
+        .milestone h3 {
+            margin-bottom: 5px;
+        }
+
+        .milestone .date {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .milestone p {
+            margin-bottom: 5px;
+        }
+
+        .milestone a {
+            color: #57a0d3;
+            text-decoration: none;
+        }
+
+        .milestone a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        .bar {
+            width: 200%;
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 20px;
+            padding-left: 1cm;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        body.light-mode header {
+            background-color: #333;
+        }
+
+        body.light-mode header nav ul li a {
+            color: #fff;
+        }
+
+        body.light-mode .path {
+            border-left: 4px solid #333;
+        }
+
+        body.light-mode .milestone::before {
+            background-color: #333;
+            border: 4px solid #f0f0f0;
+        }
+
+        body.light-mode footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+            header h1 {
+                float: none;
+                margin-bottom: 10px;
+            }
+            header nav {
+                float: none;
+                margin-top: 20px;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+            .path {
+                width: 100%;
+                padding: 0;
+            }
+            .milestone {
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="bar">
+            <h1>Harsh Joshi</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="lj.html">Learning Journey</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#certi">Certificates</a></li>
+                    <li><a href="#social links">Social Links</a></li>
+                    <span class="mode-toggle" onclick="toggleMode()">☀️</span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="learning-journey">
+        <div class="container">
+            <h2>My Learning Journey</h2>
+            <div class="path">
+                <div class="milestone">
+                    <h3>Milestone 1: Machine Learning Basics</h3>
+                    <p class="date">Completed: January 2021</p>
+                    <p>Learned the fundamentals of Machine Learning, including supervised and unsupervised learning techniques.</p>
+                    <p><a href="https://github.com/harshjoshi9988/machine-learning-basics" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 2: Deep Learning</h3>
+                    <p class="date">Completed: May 2021</p>
+                    <p>Delved into Deep Learning, exploring neural networks, convolutional networks, and recurrent networks.</p>
+                    <p><a href="https://github.com/harshjoshi9988/deep-learning" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 3: Natural Language Processing</h3>
+                    <p class="date">Completed: October 2021</p>
+                    <p>Worked on NLP projects including text classification, sentiment analysis, and language modeling.</p>
+                    <p><a href="https://github.com/harshjoshi9988/nlp-projects" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 4: MLOps</h3>
+                    <p class="date">Completed: March 2022</p>
+                    <p>Gained expertise in MLOps to streamline the deployment and monitoring of machine learning models.</p>
+                    <p><a href="https://github.com/harshjoshi9988/mlops" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 5: Web Development</h3>
+                    <p class="date">Completed: August 2022</p>
+                    <p>Learned web development skills to build interactive and responsive web applications.</p>
+                    <p><a href="https://github.com/harshjoshi9988/web-development" target="_blank">View GitHub Repo</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Harsh Joshi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+            const modeToggle = document.querySelector('.mode-toggle');
+            if (body.classList.contains('light-mode')) {
+                modeToggle.textContent = '🌙';
+            } else {
+                modeToggle.textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Joshi - Portfolio</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            margin: 0; /* Remove default body margin */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 70%; /* Reduced width */
+            max-width: 1000px; /* Reduced max width */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1e1e1e; /* Darker header */
+            color: #e0e0e0;
+            padding: 10px 0;
+            overflow: hidden; /* Clear floats inside header */
+        }
+
+        header h1 {
+            float: left;
+            margin: 0; /* Remove default margin */
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        header nav ul li {
+            display: inline-block; /* Use inline-block for better alignment */
+            margin-left: 20px;
+        }
+
+        header nav ul li:first-child {
+            margin-left: 0; /* Remove margin from first li */
+        }
+
+        header nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 10px; /* Add padding for better clickability */
+        }
+
+        header nav ul li a:hover {
+            color: #57a0d3;
+        }
+
+        section {
+            padding: 40px 0;
+            flex: 1;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .articles .article-card {
+            background-color: #2c2c2c; /* Slightly lighter background for cards */
+            color: #e0e0e0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .articles .article-card img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .articles .article-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .articles .article-card p {
+            margin-bottom: 10px;
+        }
+
+        .articles .article-card a {
+            color: #57a0d3;
+            text-decoration: none;
+        }
+
+        .articles .article-card a:hover {
+            text-decoration: underline;
+        }
+
+        .articles .article-card:hover {
+            transform: translateY(-5px);
+            background-color: #57a0d3;
+            color: #fff;
+        }
+
+        .articles .article-card:hover a {
+            color: #fff;
+        }
+
+        footer {
+            background-color: #1e1e1e; /* Darker footer */
+            color: #e0e0e0;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+            header h1 {
+                float: none;
+                margin-bottom: 10px; /* Add margin bottom for spacing */
+            }
+            header nav {
+                float: none;
+                margin-top: 20px;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+                text-align: center; /* Center align items */
+            }
+            .articles {
+                padding: 10px; /* Reduced padding */
+            }
+            .articles .article-card {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+
+        .bar {
+            width: 200%; /* Reduced width */
+            max-width: 1150px; /* Reduced max width */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 20px;
+            padding-left: 1cm;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f0f0f0; /* Light background */
+            color: #333; /* Dark text */
+        }
+
+        body.light-mode header {
+            background-color: #333; /* Darker header */
+        }
+
+        body.light-mode header nav ul li a {
+            color: #fff;
+        }
+
+        body.light-mode .articles .article-card {
+            background-color: #f8f8f8; /* Lighter background for cards */
+            color: #333;
+        }
+
+        body.light-mode footer {
+            background-color: #333; /* Darker footer */
+            color: #fff;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header h1 {
+                margin-bottom: 10px; /* Add margin bottom for spacing */
+            }
+            header nav ul {
+                flex-direction: column;
+            }
+            header nav ul li {
+                margin: 10px 0;
+            }
+            .articles {
+                padding: 10px; /* Reduced padding */
+            }
+            .articles .article-card {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="bar">
+            <h1>Harsh Joshi</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="certi.html">Certificates</a></li>
+                    <li><a href="lj.html">Learning Journey</a></li>
+                    <li><a href="social.html">Social Links</a></li>
+                    <span class="mode-toggle" onclick="toggleMode()">☀️</span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="articles">
+        <div class="container articles">
+            <h2>Articles</h2>
+            <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*-MKLEtyrPeyqH4gESl1ueA.png" alt="Article One Image">
+                <h3>Article One</h3>
+                <p>Brief description of the article. Summarize the main points or topics covered.</p>
+                <p><a href="https://medium.com/@username/article-one" target="_blank">Read More</a></p>
+            </div>
+            <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ltpYOXmcdaJCYHaNKPdw6g.png" alt="Article Two Image">
+                <h3>Article Two</h3>
+                <p>Brief description of the article. Summarize the main points or topics covered.</p>
+                <p><a href="https://medium.com/@username/article-two" target="_blank">Read More</a></p>
+            </div>
+            <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*b0ZVIqi5MDjEeIyx3ycxYw.jpeg" alt="Article Three Image">
+                <h3>Article Three</h3>
+                <p>Brief description of the article. Summarize the main points or topics covered.</p>
+                <p><a href="https://medium.com/@username/article-three" target="_blank">Read More</a></p>
+            </div>
+            <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*_DnCTffkryYBFxZHkos2Ww.jpeg" alt="Article Four Image">
+                <h3>Article Four</h3>
+                <p>Brief description of the article. Summarize the main points or topics covered.</p>
+                <p><a href="https://medium.com/@username/article-four" target="_blank">Read More</a></p>
+            </div>
+            <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*66xwQPBd_elRigZi-Uk5-w.jpeg" alt="Article Five Image">
+                <h3>Article Five</h3>
+                <p>Brief description of the article. Summarize the main points or topics covered.</p>
+                <p><a href="https://medium.com/@username/article-five" target="_blank">Read More</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Harsh Joshi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+            const modeToggle = document.querySelector('.mode-toggle');
+            if (body.classList.contains('light-mode')) {
+                modeToggle.textContent = '🌙';
+            } else {
+                modeToggle.textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>

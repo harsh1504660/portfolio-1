@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Joshi - Certificates</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            margin: 0; /* Remove default body margin */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1e1e1e; /* Darker header */
+            color: #e0e0e0;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        header h1 {
+            float: left;
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        header nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        header nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 10px;
+        }
+
+        header nav ul li a:hover {
+            color: #57a0d3;
+        }
+
+        .certificates {
+            padding: 40px 0;
+            flex: 1;
+        }
+
+        .certificates h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .certificate-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .certificate {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .certificate:hover {
+            transform: translateY(-5px);
+            border-color: #57a0d3;
+        }
+
+        .certificate h3 {
+            margin-bottom: 10px;
+        }
+
+        .certificate p {
+            margin-bottom: 15px;
+        }
+
+        .certificate a {
+            color: #57a0d3;
+            text-decoration: none;
+        }
+
+        .certificate a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        .bar {
+            width: 200%;
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 20px;
+            padding-left: 1cm;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        body.light-mode header {
+            background-color: #333;
+        }
+
+        body.light-mode header nav ul li a {
+            color: #fff;
+        }
+
+        body.light-mode .certificate {
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        body.light-mode .certificate:hover {
+            border-color: #333;
+        }
+
+        body.light-mode footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+            header h1 {
+                float: none;
+                margin-bottom: 10px;
+            }
+            header nav {
+                float: none;
+                margin-top: 20px;
+            }
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+            .certificate-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .certificate {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="bar">
+            <h1>Harsh Joshi</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="lj.html">Learning Journey</a></li>
+                    <li><a href="certi.html">Certificates</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#social links">Social Links</a></li>
+                    <span class="mode-toggle" onclick="toggleMode()">☀️</span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="certificates">
+        <div class="container">
+            <h2>My Certificates</h2>
+            <div class="certificate-list">
+                <div class="certificate">
+                    <img src="images\UC-e800a629-9f0d-4c4a-8339-859dbb497768.jpg" alt="Machine Learning Certificate">
+                    <h3>Machine Learning</h3>
+                    <p>Issued by: Coursera</p>
+                    <p>Date: January 2021</p>
+                    <p><a href="#" target="_blank">View Certificate</a></p>
+                </div>
+                <div class="certificate">
+                    <img src="images\UC-45bd925e-86a7-4ebc-91d8-5c8c1b16020c.jpg" alt="Deep Learning Certificate">
+                    <h3>Deep Learning</h3>
+                    <p>Issued by: Coursera</p>
+                    <p>Date: May 2021</p>
+                    <p><a href="#" target="_blank">View Certificate</a></p>
+                </div>
+                <div class="certificate">
+                    <img src="images\1698012396814.jpg" alt="Natural Language Processing Certificate">
+                    <h3>Natural Language Processing</h3>
+                    <p>Issued by: Coursera</p>
+                    <p>Date: October 2021</p>
+                    <p><a href="#" target="_blank">View Certificate</a></p>
+                </div>
+                <div class="certificate">
+                    <img src="images\1698011772889.jpg" alt="MLOps Certificate">
+                    <h3>MLOps</h3>
+                    <p>Issued by: Coursera</p>
+                    <p>Date: March 2022</p>
+                    <p><a href="#" target="_blank">View Certificate</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Harsh Joshi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+            const modeToggle = document.querySelector('.mode-toggle');
+            if (body.classList.contains('light-mode')) {
+                modeToggle.textContent = '🌙';
+            } else {
+                modeToggle.textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>
+
