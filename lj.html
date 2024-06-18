@@ -16,9 +16,9 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text */
-            margin: 0; /* Remove default body margin */
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -34,28 +34,45 @@
         header {
             background-color: #1e1e1e; /* Darker header */
             color: #e0e0e0;
-            padding: 10px 0;
+            padding: 15px 20px; /* Padding adjusted */
             overflow: hidden;
         }
 
-        header h1 {
-            float: left;
+        .bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px; /* Padding adjusted */
+            height: 60px; /* Height increased */
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            margin-right: auto; /* Pushes the nav to the right */
+        }
+
+        .header-content h1 {
+            padding-left: 1cm;
             margin: 0;
+            font-size: 2em; /* Increased font size */
         }
 
         header nav {
-            float: right;
+            margin-left: auto; /* Pushes the nav to the left */
+            padding-right: 1.5cm;
         }
 
         header nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+            display: flex;
         }
 
         header nav ul li {
-            display: inline-block;
-            margin-left: 20px;
+            margin-left: 10px;
+            padding-right: 0.2cm;
         }
 
         header nav ul li:first-child {
@@ -63,10 +80,10 @@
         }
 
         header nav ul li a {
-            color: #e0e0e0;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
-            padding: 10px;
+            padding: 15px; /* Add padding for better clickability */
         }
 
         header nav ul li a:hover {
@@ -80,7 +97,7 @@
         }
 
         .learning-journey h2 {
-            font-size: 2.5em;
+            font-size: 2.8em; /* Increased font size */
             margin-bottom: 20px;
             text-align: center;
         }
@@ -145,18 +162,10 @@
             bottom: 0;
         }
 
-        .bar {
-            width: 200%;
-            max-width: 1150px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
         .mode-toggle {
             cursor: pointer;
             font-size: 1.2em;
             margin-left: 20px;
-            padding-left: 1cm;
         }
 
         /* Light mode styles */
@@ -188,27 +197,63 @@
         }
 
         /* Media Queries for responsiveness */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 10px;
+        }
+
         @media (max-width: 768px) {
-            header {
-                text-align: center;
+            .bar {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto; /* Reset height */
+                padding: 0 20px; /* Adjust padding for smaller screens */
             }
-            header h1 {
-                float: none;
-                margin-bottom: 10px;
+         
+            .header-content h1 {
+                padding-top: 0.3cm;
+                padding-left:3cm;
+                text-align: center; /* Align h1 text to left */
+                font-size: 2em; /* Adjust font size for mobile */
             }
+
+            .menu-icon {
+                display: block;
+                align-self: flex-end;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+          
             header nav {
+                padding-right: 0cm;
                 float: none;
                 margin-top: 20px;
+                width: 100%;
+                text-align: center; /* Centering nav items in mobile view */
             }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul.show {
+                display: flex;
+            }
+
             header nav ul li {
-                display: block;
                 margin: 10px 0;
-                text-align: center;
             }
+
             .path {
                 width: 100%;
                 padding: 0;
             }
+
             .milestone {
                 padding-left: 10px;
             }
@@ -218,15 +263,18 @@
 <body class="dark-mode">
     <header>
         <div class="bar">
-            <h1>Harsh Joshi</h1>
+            <div class="header-content">
+                <h1 style="margin-left: 10px;">Harsh Joshi</h1> <!-- Adjusted margin-left -->
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            </div>
             <nav>
-                <ul>
+                <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="lj.html">Learning Journey</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#certi">Certificates</a></li>
-                    <li><a href="#social links">Social Links</a></li>
+                    <li><a href="learning-journey.html">Learning Journey</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="social-links.html">Social Links</a></li>
                     <span class="mode-toggle" onclick="toggleMode()">☀️</span>
                 </ul>
             </nav>
@@ -285,6 +333,10 @@
             } else {
                 modeToggle.textContent = '☀️';
             }
+        }
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
         }
     </script>
 </body>
