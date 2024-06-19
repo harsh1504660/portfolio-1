@@ -85,6 +85,12 @@
             transition: color 0.3s ease;
             padding: 15px; /* Add padding for better clickability */
         }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 10px;
+        }
 
         header nav ul li a:hover {
             color: #57a0d3;
@@ -195,14 +201,12 @@
             background-color: #333;
             color: #fff;
         }
+        body.light-mode .milestone .date{
+            color :#121212;
+        }
 
         /* Media Queries for responsiveness */
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            padding: 10px;
-        }
+     
 
         @media (max-width: 768px) {
             .bar {
@@ -271,11 +275,11 @@
             <nav>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="learning-journey.html">Learning Journey</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="certificates.html">Certificates</a></li>
-                    <li><a href="social-links.html">Social Links</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="blogs.html">Articles</a></li>
+                    <li><a href="#">Learning Journey</a></li>
+                    <li><a href="certi.html">Certificates</a></li>
+                    <li><a href="social.html">Social Links</a></li>
                     <span class="mode-toggle" onclick="toggleMode()">☀️</span>
                 </ul>
             </nav>
@@ -287,34 +291,67 @@
             <h2>My Learning Journey</h2>
             <div class="path">
                 <div class="milestone">
-                    <h3>Milestone 1: Machine Learning Basics</h3>
-                    <p class="date">Completed: January 2021</p>
-                    <p>Learned the fundamentals of Machine Learning, including supervised and unsupervised learning techniques.</p>
-                    <p><a href="https://github.com/harshjoshi9988/machine-learning-basics" target="_blank">View GitHub Repo</a></p>
+                    <h3>Milestone 1: Python</h3>
+                    <p class="date">Completed: October 2022</p>
+                    <p>Learned Python from basic to advanced concepts, including object-oriented programming (OOP), decorators, generators, and error handling.</p>
+                    <p><a href="https://github.com/harsh1504660/Python-Lessons" target="_blank">View GitHub Repo</a></p>
                 </div>
                 <div class="milestone">
-                    <h3>Milestone 2: Deep Learning</h3>
-                    <p class="date">Completed: May 2021</p>
-                    <p>Delved into Deep Learning, exploring neural networks, convolutional networks, and recurrent networks.</p>
-                    <p><a href="https://github.com/harshjoshi9988/deep-learning" target="_blank">View GitHub Repo</a></p>
+                    <h3>Milestone 2: C++</h3>
+                    <p class="date">Completed: May 2023</p>
+                    <p>Learned C++ through YouTube, covering concepts such as memory management, object-oriented programming (OOP), pointers, data structures.</p>
+                    <p><a href="https://github.com/harsh1504660/cpp-Lessons" target="_blank">View GitHub Repo</a></p>
                 </div>
                 <div class="milestone">
-                    <h3>Milestone 3: Natural Language Processing</h3>
-                    <p class="date">Completed: October 2021</p>
-                    <p>Worked on NLP projects including text classification, sentiment analysis, and language modeling.</p>
-                    <p><a href="https://github.com/harshjoshi9988/nlp-projects" target="_blank">View GitHub Repo</a></p>
+                    <h3>Milestone 3: Competetive Programming on CodeChef in c++ & python</h3>
+                    <p class="date">Completed: Novmember 2023</p>
+                    <p>Using Python and C++, I solved at least 60 competitive programming problems on CodeChef in various dificulties.</p>
+                    <p><a href="https://github.com/harsh1504660/Codechef-Problems" target="_blank">View GitHub Repo</a></p>
                 </div>
                 <div class="milestone">
-                    <h3>Milestone 4: MLOps</h3>
-                    <p class="date">Completed: March 2022</p>
-                    <p>Gained expertise in MLOps to streamline the deployment and monitoring of machine learning models.</p>
-                    <p><a href="https://github.com/harshjoshi9988/mlops" target="_blank">View GitHub Repo</a></p>
+                    <h3>Milestone 4: Web Development Projects In Django & Html </h3>
+                    <p class="date">Completed: April 2023</p>
+                    <p>
+                        I learned HTML and CSS for frontend development and Django for backend development. To test my knowledge, I completed two projects: the first is "Graphy," an application that allows users to plot various graphs using appropriate data, and the second is the "Planet Weight Calculator," an application where users can calculate their weight on different planets.</p>
+                    <p>Project Graphy : <a href="https://github.com/harsh1504660/Graphy" target="_blank">View GitHub Repo</a></p>
+                    <p>Project Planate Weight Calculator : <a href="https://github.com/harsh1504660/Planate-Weight-Calculator" target="_blank">View GitHub Repo</a></p>
                 </div>
                 <div class="milestone">
-                    <h3>Milestone 5: Web Development</h3>
-                    <p class="date">Completed: August 2022</p>
-                    <p>Learned web development skills to build interactive and responsive web applications.</p>
-                    <p><a href="https://github.com/harshjoshi9988/web-development" target="_blank">View GitHub Repo</a></p>
+                    <h3>Milestone 5: Machine Learning Basics </h3>
+                    <p class="date">Completed: Augest 2023</p>
+                    <p>Delved into the basics of machine learning through YouTube, where I learned about various steps in the ML pipeline, different algorithms, and completed some hands-on projects.</p>
+                    <p><a href="https://github.com/harsh1504660/Machinel-Learning-Lessons" target="_blank">View GitHub Repo</a></p>
+                </div><div class="milestone">
+                    <h3>Milestone 6: Kaggle Competition - Titanic ML From Disaster </h3>
+                    <p class="date">Completed: Augest 2023</p>
+                    <p>Participated in a famous Kaggle competition and achieved an overall accuracy of 79%, securing a rank of 3202 out of 15550 participants. I utilized ensemble techniques to improve the accuracy of my model.</p>
+                    <p><a href="https://github.com/harsh1504660/titanic-kaggle" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 7: Analytics Vidhya Hackethon - Predicting the score in INDvsAUS Match Using ML </h3>
+                    <p class="date">Completed: October 2023</p>
+                    <p>Participated in this hackathon where the task was to predict the individual scores in the upcoming Ind vs AUS cricket match. Employing advanced feature engineering techniques, I utilized logistic regression to estimate the score ranges of individual players. Out of 2500 participants, my model successfully predicted a score range from 804, distinguishing it among the top predictions.</p>
+                    <p><a href="https://github.com/harsh1504660/Hackathon-INDvsAus" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 8: Deep Learinig Lessons</h3>
+                    <p class="date">Completed: February 2024</p>
+                    <p>
+                        Learned basic concepts of deep learning, such as gradient descent,RNNs, CNNs, and ANNs through YouTube and Udemy courses. Building on this foundation, I advanced to more complex topics like Transformers and the functional API for Vision Transformers (ViTs).</p>
+                    <p><a href="https://github.com/harsh1504660/Deep-Learning-Lessons-" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 9: Natural Language Processing Lessons</h3>
+                    <p class="date">Completed: February 2024</p>
+                    <p>
+                        Diving deeper into NLP, I've delved into essential concepts such as text vectorization, Word2Vec, POS tagging, entity recognition, and text classification.</p>
+                    <p><a href="https://github.com/harsh1504660/NLP-Lessons" target="_blank">View GitHub Repo</a></p>
+                </div>
+                <div class="milestone">
+                    <h3>Milestone 10: MLOPs</h3>
+                    <p class="date">Completed: June 2024</p>
+                    <p>Learned machine learning model deployment through an MLOps course, gaining insights into various tools such as Docker, Prometheus, Grafana, MLflow, and WhyLogs. The course included hands-on projects that provided practical experience in deploying and managing machine learning models effectively.</p>
+                    <p><a href="https://github.com/harsh1504660/MLOPs-Lessons" target="_blank">View GitHub Repo</a></p>
                 </div>
             </div>
         </div>
@@ -342,3 +379,4 @@
     </script>
 </body>
 </html>
+
