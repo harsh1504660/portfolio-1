@@ -16,17 +16,17 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text */
-            margin: 0; /* Remove default body margin */
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         .container {
-            width: 70%; /* Reduced width */
-            max-width: 1000px; /* Reduced max width */
+            width: 70%;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -34,39 +34,62 @@
         header {
             background-color: #1e1e1e; /* Darker header */
             color: #e0e0e0;
-            padding: 10px 0;
-            overflow: hidden; /* Clear floats inside header */
+            padding: 15px 20px; /* Padding adjusted */
+            overflow: hidden;
         }
 
-        header h1 {
-            float: left;
-            margin: 0; /* Remove default margin */
+        .bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px; /* Padding adjusted */
+            height: 60px; /* Height increased */
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            margin-right: auto; /* Pushes the nav to the right */
+        }
+
+        .header-content h1 {
+            padding-left: 1cm;
+            margin: 0;
+            font-size: 2em; /* Increased font size */
         }
 
         header nav {
-            float: right;
+            margin-left: auto; /* Pushes the nav to the left */
+            padding-right: 1.5cm;
         }
 
         header nav ul {
             list-style-type: none;
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
 
         header nav ul li {
-            display: inline-block; /* Use inline-block for better alignment */
-            margin-left: 20px;
+            margin-left: 10px;
+            padding-right: 0.2cm;
         }
 
         header nav ul li:first-child {
-            margin-left: 0; /* Remove margin from first li */
+            margin-left: 0;
         }
 
         header nav ul li a {
-            color: #e0e0e0;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
-            padding: 10px; /* Add padding for better clickability */
+            padding: 15px; /* Add padding for better clickability */
+        }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 10px;
         }
 
         header nav ul li a:hover {
@@ -175,21 +198,49 @@
 
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
-            header {
-                text-align: center;
+            .bar {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto; /* Reset height */
+                padding: 0 20px; /* Adjust padding for smaller screens */
             }
-            header h1 {
-                float: none;
-                margin-bottom: 10px; /* Add margin bottom for spacing */
+         
+            .header-content h1 {
+                
+                padding-top: 0.3cm;
+                justify-content: center;
+                text-align: center; /* Align h1 text to left */
+                font-size: 2em; /* Adjust font size for mobile */
             }
+
+            .menu-icon {
+                display: block;
+                align-self: flex-end;
+                position: absolute;
+                right: 45px;
+                top: 24px;
+            }
+          
             header nav {
+                padding-right: 0cm;
                 float: none;
                 margin-top: 20px;
+                width: 100%;
+                text-align: center; /* Centering nav items in mobile view */
             }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul.show {
+                display: flex;
+            }
+
             header nav ul li {
-                display: block;
                 margin: 10px 0;
-                text-align: center; /* Center align items */
             }
             .tech-stack {
                 padding: 10px; /* Reduced padding */
@@ -200,19 +251,7 @@
             }
         }
 
-        .bar {
-            width: 200%; /* Reduced width */
-            max-width: 1150px; /* Reduced max width */
-            margin: 0 auto;
-            padding: 20px;
-        }
 
-        .mode-toggle {
-            cursor: pointer;
-            font-size: 1.2em;
-            margin-left: 20px;
-            padding-left: 1cm;
-        }
 
         /* Light mode styles */
         body.light-mode {
@@ -278,19 +317,85 @@
             }
 
         }
+          /* Gallery Modal Styles */
+          .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+            overflow: auto;
+            text-align: center;
+        }
+
+        .gallery-content {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100%;
+        }
+
+        .gallery-content img {
+            max-width: 100%; /* Ensure images don't exceed the modal width */
+            max-height: 80vh; /* Adjust as needed */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        .close {
+            color: white;
+            font-size: 2em;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        /* Previous and Next buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+        }
     </style>
 </head>
 <body class="dark-mode">
     <header>
         <div class="bar">
-            <h1>Harsh Joshi</h1>
+            <div class="header-content">
+                <h1 style="margin-left: 10px;">Harsh Joshi</h1> <!-- Adjusted margin-left -->
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            </div>
             <nav>
-                <ul>
+                <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="blogs.html">Blogs</a></li>
-                    <li><a href="certi.html">Certificates</a></li>
+                    <li><a href="blogs.html">Articles</a></li>
                     <li><a href="lj.html">Learning Journey</a></li>
+                    <li><a href="certi.html">Certificates</a></li>
                     <li><a href="social.html">Social Links</a></li>
                     <span class="mode-toggle" onclick="toggleMode()">☀️</span>
                 </ul>
@@ -299,38 +404,83 @@
     </header>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <div class="container projects">
-            <h2>Projects</h2>
+    <section class="container">
+        <h2>My Projects</h2>
+        <div class="projects">
             <div class="project-card">
                 <h3>Smart Answer Evaluator</h3>
-                <p>Brief description of the project. Explain what the project is about and the main features.</p>
-                <p><strong>Technologies Used:</strong> Tech1, Tech2, Tech3</p>
-                <p><a href="https://link-to-project-one.com" target="_blank">View Project</a> | <a href="https://github.com/username/project-one" target="_blank">View Code</a></p>
+                <p>I developed a deep learning model capable of classifying students' answers into three categories: partial correct, correct, and incorrect, by comparing them with an ideal answer. Leveraging BERT architecture as a foundation, I further customized it to accommodate manual input or image uploads for answers. The application calculates marks using probabilities obtained from the model, applying a formula I developed specifically for this purpose.
+                    Users can also select the type of checking—either hard checking or soft checking—according to their preference. This flexibility allows them to adjust how rigorously the system evaluates the results based on their specific needs or criteria.</p>
+                <p><strong>Technologies Used:</strong> Transformers, Tesnorflow, FastAPI, Flask, HTML/CSS</p>
+                <p><a href="https://smart-answer-evaluator.onrender.com/" target="_blank">View Project</a> | <a href="https://github.com/harsh1504660/Smart-Answer-Evaluator" target="_blank">View Code</a> | <a href="#" id="openGalleryBtn-1">Open Gallery</a></p>
             </div>
+
+            <div id="imageGallery-1" class="gallery-modal">
+                <span class="close">&times;</span>
+                <button class="prev" onclick="plusSlides(-1, 1)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1, 1)">&#10095;</button>
+                <div class="gallery-content">
+                    <img src="images\1698011772889.jpg" alt="Image 1">
+                    <img src="images\1698012396814.jpg" alt="Image 2">
+                    <!-- Add more images as needed for Project 1 -->
+                </div>
+            </div>
+
+            
             <div class="project-card">
                 <h3>VLC Media Controller Using Hand Gestures</h3>
-                <p>Brief description of the project. Explain what the project is about and the main features.</p>
-                <p><strong>Technologies Used:</strong> Tech1, Tech2, Tech3</p>
-                <p><a href="https://link-to-project-two.com" target="_blank">View Project</a> | <a href="https://github.com/username/project-two" target="_blank">View Code</a></p>
+                <p>In this project, I developed a deep learning model to classify hand gestures, enabling users to control the VLC media player seamlessly. The model recognizes gestures such as fist (pause/play), OK sign (confirm), two fingers up (volume up), palm (volume down), and other gestures as commands for actions like skipping tracks. This integration allows users to interact with VLC Media Player intuitively through hand gestures detected and classified by the deep learning model.I fine-tuned the VGG16 model using the HaGrid dataset, achieving an impressive accuracy of 96%. </p>
+                <p><strong>Technologies Used:</strong> Tensorflow, TKinter, OpenCV</p>
+                <p><a href="https://drive.google.com/file/d/10LSHdoqwn8hS7JuwRlFm74gg8RKY2n-A/view?usp=sharing" target="_blank">View Project</a> | <a href="https://github.com/harsh1504660/Gesture-Media-Controller" target="_blank">View Code</a></p>
             </div>
             <div class="project-card">
                 <h3>Diabetes Detector</h3>
-                <p>Brief description of the project. Explain what the project is about and the main features.</p>
-                <p><strong>Technologies Used:</strong> Tech1, Tech2, Tech3</p>
-                <p><a href="https://link-to-project-three.com" target="_blank">View Project</a> | <a href="https://github.com/username/project-three" target="_blank">View Code</a></p>
+                <p>This is a machine learning model deployed on Streamlit, capable of predicting whether the user has diabetes. It utilizes features such as smoking history, hypertension, heart disease, glucose level, etc. Logistic regression is employed to illustrate the likelihood of diabetes with an impressive accuracy of 92%.</p>
+                <p><strong>Technologies Used:</strong> Scikit-Learn, Streamlit, Numpy</p>
+                <p><a href="https://diabetes-predictor-ankmxawcztpjgcsmlkyybw.streamlit.app/" target="_blank">View Project</a> | <a href="https://github.com/harsh1504660/Diabetes-Predictor" target="_blank">View Code</a>| <a href="#" id="openGalleryBtn-2">Open Gallery</a></p>
+            </div>
+
+            <div id="imageGallery-2" class="gallery-modal">
+                <span class="close">&times;</span>
+                <button class="prev" onclick="plusSlides(-1, 2)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1, 2)">&#10095;</button>
+                <div class="gallery-content">
+                    <img src="images\UC-e800a629-9f0d-4c4a-8339-859dbb497768.jpg" alt="Image 1">
+                    <img src="images\UC-45bd925e-86a7-4ebc-91d8-5c8c1b16020c.jpg" alt="Image 2">
+                    <!-- Add more images as needed for Project 2 -->
+                </div>
             </div>
             <div class="project-card">
                 <h3>IPL Win Probablity Calculator</h3>
-                <p>Brief description of the project. Explain what the project is about and the main features.</p>
+                <p>In this project, I developed a machine learning model to calculate the win percentage of a cricket team based on the current game scenario. Factors considered include the target set, overs remaining, wickets fallen, etc. Logistic regression was utilized to classify whether the batting team is losing or not. Using this classification, I computed the win percentage for both teams involved in the match.</p>
                 <p><strong>Technologies Used:</strong> Tech1, Tech2, Tech3</p>
-                <p><a href="https://link-to-project-four.com" target="_blank">View Project</a> | <a href="https://github.com/username/project-four" target="_blank">View Code</a></p>
+                <p><a href="https://ipl-win-predictor-u4xgjjtwhqqwlygonwzpnt.streamlit.app/" target="_blank">View Project</a> | <a href="https://github.com/harsh1504660/IPL-Win-Predictor" target="_blank">View Code</a>| <a href="#" id="openGalleryBtn-3">Open Gallery</a></p>
+            </div>
+            <div id="imageGallery-3" class="gallery-modal">
+                <span class="close">&times;</span>
+                <button class="prev" onclick="plusSlides(-1, 3)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1, 3)">&#10095;</button>
+                <div class="gallery-content">
+                    <img src="images\UC-45bd925e-86a7-4ebc-91d8-5c8c1b16020c.jpg" alt="Image 1">
+                    <img src="images\1698011772889.jpg" alt="Image 2">
+                    <!-- Add more images as needed for Project 3 -->
+                </div>
             </div>
             <div class="project-card">
                 <h3>Laptop Price Predictor</h3>
-                <p>Brief description of the project. Explain what the project is about and the main features.</p>
+                <p>This deployed machine learning model calculates the price of a laptop using features such as brand, HDD size, SSD presence, RAM, and other relevant specifications. To tackle this regression problem, decision tree algorithms were employed. To improve the R2 score, feature engineering techniques like regularization were applied, resulting in an approximate R2 score of 88%.</p>
                 <p><strong>Technologies Used:</strong> Tech1, Tech2, Tech3</p>
-                <p><a href="https://link-to-project-five.com" target="_blank">View Project</a> | <a href="https://github.com/username/project-five" target="_blank">View Code</a></p>
+                <p><a href="https://laptop-price-predictor-jsbziud4ibtybumfx7mmkj.streamlit.app/" target="_blank">View Project</a> | <a href="https://github.com/harsh1504660/Laptop-price-predictor" target="_blank">View Code</a>| <a href="#" id="openGalleryBtn-4">Open Gallery</a></p>
+            </div>
+            <div id="imageGallery-4" class="gallery-modal">
+                <span class="close">&times;</span>
+                <button class="prev" onclick="plusSlides(-1, 4)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1, 4)">&#10095;</button>
+                <div class="gallery-content">
+                    <img src="images\UC-45bd925e-86a7-4ebc-91d8-5c8c1b16020c.jpg" alt="Image 1">
+                    <img src="images\1698011772889.jpg" alt="Image 2">
+                    <!-- Add more images as needed for Project 4 -->
+                </div>
             </div>
         </div>
     </section>
@@ -350,6 +500,74 @@
                 modeToggle.textContent = '☀️';
             }
         }
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+
+
+
+        function openGallery(projectId) {
+    let modal = document.getElementById(`imageGallery-${projectId}`);
+    modal.style.display = 'block';
+    showSlides(0, projectId); // Display the first slide when modal opens
+}
+
+// Event listeners for each "Open Gallery" link
+document.getElementById('openGalleryBtn-1').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    openGallery(1);
+});
+
+document.getElementById('openGalleryBtn-2').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    openGallery(2);
+});
+
+document.getElementById('openGalleryBtn-3').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    openGallery(3);
+});
+
+document.getElementById('openGalleryBtn-4').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    openGallery(4);
+});
+
+// Close the gallery modal when clicking the close button or outside the modal
+document.querySelectorAll('.close').forEach(function(closeBtn) {
+    closeBtn.addEventListener('click', function() {
+        document.querySelectorAll('.gallery-modal').forEach(function(modal) {
+            modal.style.display = 'none';
+        });
+    });
+});
+
+// Image slideshow functionality
+let slideIndexes = {};
+
+function plusSlides(n, projectId) {
+    if (!slideIndexes[projectId]) {
+        slideIndexes[projectId] = 1;
+    }
+    showSlides(slideIndexes[projectId] += n, projectId);
+}
+
+function showSlides(n, projectId) {
+    let slides = document.getElementById(`imageGallery-${projectId}`).getElementsByClassName("gallery-content")[0].getElementsByTagName("img");
+    if (slides.length === 0) return; // Exit function if there are no slides
+
+    if (n > slides.length) { slideIndexes[projectId] = 1; }
+    if (n < 1) { slideIndexes[projectId] = slides.length; }
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Display the current slide
+    slides[slideIndexes[projectId] - 1].style.display = "block";
+}
     </script>
 </body>
 </html>
