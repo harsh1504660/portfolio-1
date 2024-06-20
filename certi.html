@@ -244,18 +244,25 @@
                 margin: 10px 0;
             }
             .certificate-list {
-                flex-direction: column;
-                margin-right: 1cm;
-            }
-            .certificate {
-                 /* Reduced width for mobile view */
-                 width :180%;
-              
-            }
-            .certificates{
-    
-                margin-right: 3cm;
-            }
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .certificate {
+        width: 90%; /* Increase width to 90% of container */
+        margin: 20px 0; /* Adjust vertical margin, remove horizontal margin */
+    }
+
+    .certificates {
+        margin-right: 0; /* Remove right margin */
+        padding: 20px; /* Add some padding */
+    }
+
+    .container {
+        width: 100%; /* Make container full width on mobile */
+        padding: 10px; /* Reduce padding */
+    }
         }
     </style>
 </head>
