@@ -215,6 +215,10 @@
                 display: block;
                 margin: 10px auto;
             }
+
+            .container p{
+                width: 145%;
+            }
             .container {
                 margin-right: 3cm;
             }
@@ -226,6 +230,7 @@
                 text-align: right; /* Center align the h2 text */
                 padding-left: 5cm;
             }
+        
         }
 
         /* Light mode styles */
@@ -266,40 +271,6 @@
             background-color: #333; /* Darker footer */
             color: #fff;
         }
-
-        /* Media Queries for responsiveness */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            header h1 {
-                margin-bottom: 10px; /* Add margin bottom for spacing */
-            }
-            header nav ul {
-                flex-direction: column;
-            }
-            header nav ul li {
-                margin: 10px 0;
-            }
-            .tech-stack {
-                padding: 10px; /* Reduced padding */
-                width: 145%;
-            }
-            .tech-stack .card {
-                display: block;
-                margin: 10px auto;
-            }
-            .container p{
-            width: 145%;
-        }
-        .container{
-                margin-right: 3.2cm;
-                
-            }
-        }
-
-        
     </style>
 </head>
 <body>
@@ -325,17 +296,19 @@
 
     <section id="home">
         <div class="container">
+
             <h2>Welcome to My Portfolio</h2>
+    
             <p>I'm a third-year Electronics Engineering student and an AI/ML enthusiast. I possess a strong foundation in machine learning, deep learning, natural language processing (NLP), and MLOps. Complementing my technical skills, I have experience in web development using Python, enabling me to integrate AI/ML capabilities into web applications seamlessly.</p>
             <p>Through projects and coding competitions, I've gained hands-on experience in building end-to-end AI/ML solutions, from data preprocessing to deployment and monitoring. My cross-disciplinary expertise allows me to develop innovative, intelligent systems that drive meaningful progress.</p>
 
             <!-- Tech Stack Section -->
             <div class="tech-stack">
                 <h3>My Skills</h3>
-                <div class="card">Machine Learinig</div>
+                <div class="card">Machine Learning</div>
                 <div class="card">Deep Learning</div>
                 <div class="card">NLP</div>
-                <div class="card">MLOPs</div>
+                <div class="card">MLOps</div>
                 <div class="card">Computer Vision</div>
                 <div class="card">Data Analysis</div>
                 <div class="card">Web Dev</div>
@@ -343,12 +316,12 @@
             </div>
             <div class="tech-stack">
                 <h3>Tools & Languages</h3>
-                <div class="card">Tensorflow</div>
+                <div class="card">TensorFlow</div>
                 <div class="card">Scikit-Learn</div>
-                <div class="card">DJango</div>
+                <div class="card">Django</div>
                 <div class="card">Transformers</div>
                 <div class="card">Flask</div>
-                <div class="card">Dcoker</div>
+                <div class="card">Docker</div>
                 <div class="card">HTML5</div>
                 <div class="card">CSS3</div>
                 <div class="card">C++</div>
@@ -385,4 +358,6 @@
     </script>
 </body>
 </html>
+
+
 
